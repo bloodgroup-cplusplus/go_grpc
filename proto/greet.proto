@@ -18,11 +18,26 @@ service GreetService{
 
     rpc SayHello(NoParam) returns (HelloResponse);
 
+    rpc SayHelloServerStreaming(NamesList) returns (stream HelloResponse); // server side stream
+
+    rpc SayHelloClientStreaming(stream HelloRequest) returns {MessageList}; // client side stream
+
+
+    rpc SayHelloBidrectionalStreaming(stream HelloRequest) returns {stream HelloResponse};
+}
+    
     message NoParam{};
+
 
 
     message HelloResponse{
         string message = 1;
     }
+    
+    message HelloRequest{
+        string message = 1;
+    }
 
-}
+    message NamesList{
+        repeated string names = 1;
+    }
