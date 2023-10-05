@@ -1,0 +1,28 @@
+// we define the rpc that will happedn between client and server is in greet.proto
+// actual codes will be in pb.go file (greet_pb.go file will be generated with all of us)
+// the actual pb.go files are created for you 
+
+syntax="proto3";
+
+option go_package = "./proto";
+
+package greet_service;
+
+service GreetService{
+
+    // this will have rpcs 
+    // unary rpc 
+    // server streamaing 
+    // client streaming 
+    // bidirectional 
+
+    rpc SayHello(NoParam) returns (HelloResponse);
+
+    message NoParam{};
+
+
+    message HelloResponse{
+        string message = 1;
+    }
+
+}
