@@ -14,6 +14,8 @@ const (
 	port = ":8080"
 )
 
+
+
 func main(){
 	// how to make http request to 
 	// server request from lcient in golang 
@@ -29,11 +31,11 @@ func main(){
 
 	defer conn.Close()
 
-	client :=pb.NewGreetServiceClient(conn)
+//	client :=pb.NewGreetServiceClient(conn)
 
-	names :=&pb.NamesList{
-		Names: []string {"Chad","Alice","Bob"},
-	}
+//	names :=&pb.NamesList{
+//		Names: []string {"Chad","Alice","Bob"},
+//	}
 
-	callSayHello(client)
+//	callSayHello(client)
 }
